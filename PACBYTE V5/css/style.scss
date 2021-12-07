@@ -1,0 +1,812 @@
+@import "./variaveis";
+
+@mixin gradient() {
+    //função gradiente
+    background: linear-gradient(179deg, $BackBl1, $BackBl2, $BackBl1);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 49% 0%;
+        }
+        50% {
+            background-position: 52% 100%;
+        }
+        100% {
+            background-position: 49% 0%;
+        }
+    }
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 49% 0%;
+        }
+        50% {
+            background-position: 52% 100%;
+        }
+        100% {
+            background-position: 49% 0%;
+        }
+    }
+    @keyframes AnimationName {
+        0% {
+            background-position: 49% 0%;
+        }
+        50% {
+            background-position: 52% 100%;
+        }
+        100% {
+            background-position: 49% 0%;
+        }
+    }
+}
+
+@import "./calendar";
+
+@font-face {
+    font-family: "Blatant";
+    src: "https://www.dropbox.com/s/jg4m1pbf3i3p4c9/Blatant%20font.zip?dl=0";
+}
+
+* {
+    font-family: "Blatant", sans-serif;
+}
+
+html {
+    @include gradient();
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+//Modelos 3D css
+
+#c {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: block;
+    z-index: -1;
+}
+
+#c1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: block;
+    z-index: -1;
+}
+
+#caixaBk {
+    position: absolute;
+    top: 189%;
+    left: 28%;
+    width: 100vw;
+    height: 100%;
+    z-index: -10;
+}
+
+#joy {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+}
+
+#pac {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 181%;
+}
+
+#arcade {
+    position: absolute;
+    top: 270%;
+    left: 10%;
+    height: 100%;
+    width: 100%;
+}
+
+#bk {
+    background-color: transparent;
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 135%;
+    left: -10%;
+}
+
+ul {
+    list-style: none;
+    color: $White;
+}
+
+a {
+    text-decoration: none;
+    color: $White;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+//Grid
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 31.25vw 16.65vw 16.65vw 16.5vw 17.5vw;
+    grid-template-rows: repeat(10, 27vh);
+}
+
+@import "./header";
+
+//Body - HOMEPAGE
+
+#bkImg {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+main {
+    div {
+        #joyImg {
+            position: relative;
+            top: 79%;
+            left: 35vw;
+            z-index: -10;
+        }
+
+        h1 {
+            grid-row: 10;
+            font-size: 40px;
+            color: $White;
+            font-weight: lighter;
+            margin-left: 2.5vw;
+        }
+
+        h1:nth-child(2) {
+            grid-row: 6;
+            font-size: 40px;
+            color: $White;
+            font-weight: lighter;
+            margin-left: 2.5vw;
+        }
+
+        #pacImg {
+            position: relative;
+            top: 393%;
+            left: -37vw;
+            z-index: -10;
+        }
+
+        p {
+            color: $White;
+            font-size: 20px;
+            position: absolute;
+            top: 290%;
+            left: 2vw;
+            width: 35%;
+        }
+    }
+}
+
+.smallertext {
+    font-size: 14px;
+}
+
+//CATEGORIES/Gaming
+.categories {
+    position: relative;
+    top: 20vh;
+}
+.slideshow {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    text-align: center;
+}
+
+// Gaming page
+.breadcrumb {
+    display: block;
+    font-size: 14px;
+    li {
+        display: inline;
+    }
+}
+
+.tvscreen {
+    position: relative;
+}
+
+.tvscreen > img {
+    position: relative;
+    left: 50%;
+    transform: translate(-52.5%);
+    width: 50%;
+    height: auto;
+}
+
+//fazer com que so apareça uma categoria de cada vez
+.tvscreen > li {
+    display: none;
+    a {
+        width: 100%;
+    }
+    img {
+        display: block;
+        position: absolute;
+        top: -11vh;
+        left: 50%;
+        transform: translate(-47%);
+        width: 20vw;
+        height: auto;
+    }
+
+    span {
+        display: inline-block;
+        position: absolute;
+        color: $BackBl1;
+        text-align: center;
+        top: 14vh;
+        left: 50%;
+        transform: translate(-50%);
+
+        a {
+            color: $BackBl1;
+        }
+    }
+}
+
+.tvscreen > li:first-of-type {
+    display: block;
+}
+
+// JOYSTICK
+.joystickctrl {
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    display: block;
+
+    div {
+        width: 22.8%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+
+        img {
+            display: inline-block;
+            margin: -20%;
+            width: 16vw;
+            height: auto;
+        }
+    }
+}
+
+.joystickctrl > img {
+    width: 10vw;
+    position: absolute;
+    top: -1vw;
+    left: 50%;
+    transform: translate(-53.5%);
+}
+
+//NEWS
+#news {
+    position: relative;
+    top: 20vh;
+    margin-left: 3%;
+    color: $White;
+}
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    padding: 10px;
+    width: 60%;
+}
+
+.grid-container1 > div {
+    text-align: center;
+}
+
+// Lista de artigos
+#imglist > img {
+    float: right;
+    vertical-align: middle;
+    width: 50%;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#imglist > img:first-of-type {
+    display: block;
+}
+
+#artlist {
+    float: left;
+    vertical-align: middle;
+
+    li {
+        margin: 13% 0px;
+    }
+}
+
+// Lista de artigos
+#imglist > img {
+    width: 250px;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#imglist > img:first-of-type {
+    display: block;
+}
+
+.controlos {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    img {
+        width: 50%;
+    }
+}
+
+//ANNOUNCMENTS
+#announ {
+    width: 70%;
+    height: 80vh;
+    position: relative;
+}
+
+#forumhelp {
+    position: relative;
+    width: 80%;
+    top: -1vw;
+    margin-left: 0.6vw;
+}
+
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    grid-auto-columns: 30%;
+}
+
+.grid-item2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 150%;
+}
+
+.grid-item4 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 150%;
+}
+
+.grid-item3 {
+    display: block;
+}
+
+.userinfo {
+    position: relative;
+    top: 52%;
+    transform: translate(0, -50%);
+    left: 20%;
+    width: 45%;
+    display: inline-block;
+    margin: 0;
+
+    span {
+        position: relative;
+        margin-top: 1px;
+        display: block;
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.forumform {
+    display: inline-block;
+    width: 100%;
+    margin-top: 6%;
+    padding-left: 10%;
+    margin-left: -50%;
+
+    textarea {
+        width: 99%;
+        height: 13vh;
+        background-color: $White;
+        font-family: "Blatant", sans-serif;
+    }
+
+    input[type="submit"] {
+        font-family: "Blatant", sans-serif;
+        color: $White;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        position: relative;
+        display: block;
+        left: 100%;
+        transform: translate(-100%);
+    }
+
+    #forumposts {
+        display: inline-block;
+        width: 100%;
+        height: 13vh;
+        background-color: $White;
+        font-family: "Blatant", sans-serif;
+        color: black;
+
+        span {
+            display: block;
+            padding: 20px;
+        }
+    }
+}
+
+#news > div {
+    margin-bottom: 20vh;
+}
+
+.textpage {
+    position: relative;
+    color: $White;
+    top: 20vh;
+    margin-left: 10%;
+    font-size: 20px;
+    h1 {
+        margin-bottom: 5%;
+    }
+    p {
+        width: 70%;
+    }
+}
+
+@import "./calendar";
+
+@import "./footer";
+
+@media only screen and (max-width: 1300px) {
+    // Gaming page
+    .breadcrumb {
+        margin-left: 40px;
+    }
+
+    .tvscreen {
+        position: relative;
+        width: 130%;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: 10%;
+    }
+
+    //fazer com que so apareça uma categoria de cada vez
+    .tvscreen > li {
+        img {
+            top: -10vh;
+        }
+        span {
+            top: 10vh;
+        }
+    }
+
+    // JOYSTICK
+    .joystickctrl > img {
+        transform: translate(-58%);
+    }
+}
+
+@media only screen and (max-width: 1090px) {
+    //CATEGORIES/Gaming
+    .categories {
+        position: relative;
+        top: 20vh;
+    }
+    .slideshow {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        text-align: center;
+    }
+
+    // Gaming page
+    .breadcrumb {
+        margin-left: 10%;
+    }
+
+    .tvscreen > img {
+        width: 60%;
+        height: auto;
+    }
+
+    .tvscreen > li {
+        img {
+            width: 30vw;
+        }
+
+        span {
+            top: 13vw;
+        }
+    }
+
+    // JOYSTICK
+    .joystickctrl {
+        margin-top: 5%;
+        width: 100%;
+        position: relative;
+        display: block;
+
+        div {
+            width: 48%;
+
+            img {
+                margin: -15%;
+                width: 30vw;
+            }
+        }
+    }
+
+    .joystickctrl > img {
+        width: 19vw;
+        transform: translate(-50%);
+    }
+}
+
+@media only screen and (max-width: 756px) {
+    .tvscreen > img {
+        width: 65%;
+        height: auto;
+    }
+
+    .tvscreen > li {
+        left: 51%;
+        img {
+            width: 35vw;
+        }
+
+        span {
+            top: 11vw;
+        }
+    }
+
+    // JOYSTICK
+    .joystickctrl {
+        margin-top: 5%;
+        width: 100%;
+        position: relative;
+        display: block;
+
+        div {
+            width: 48.2%;
+
+            img {
+                margin: -15%;
+                width: 30vw;
+            }
+        }
+    }
+
+    .joystickctrl > img {
+        width: 19vw;
+        transform: translate(-50%);
+    }
+
+    //article and about us
+    .textpage {
+        position: relative;
+        color: $White;
+        top: 20vh;
+        margin-left: 10%;
+        font-size: 14px;
+        h1 {
+            margin-bottom: 30%;
+        }
+        p {
+            width: 85%;
+        }
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .tvscreen > img {
+        width: 65%;
+        height: auto;
+        left: 45.5%;
+        transform: translate(-50%);
+    }
+
+    .tvscreen > li {
+        left: 50%;
+        img {
+            top: -7vh;
+            width: 35vw;
+        }
+    }
+
+    // JOYSTICK
+    .joystickctrl {
+        margin-top: 5%;
+        width: 100%;
+        position: relative;
+        display: block;
+
+        div {
+            width: 48.9%;
+
+            img {
+                margin: -15%;
+                width: 30vw;
+            }
+        }
+    }
+
+    .joystickctrl > img {
+        width: 19vw;
+        transform: translate(-50%);
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    //NEWS
+    #news {
+        .breadcrumb {
+            margin-left: -2vw;
+            left: 0;
+        }
+    }
+
+    .grid-container1 {
+        width: 100%;
+    }
+
+    .grid-container1 > div {
+        text-align: left;
+    }
+
+    .controlos {
+        width: 90%;
+
+        img {
+            width: 0%;
+        }
+    }
+
+    //ANNOUNCMENTS
+    #announ {
+        width: 70%;
+        height: 80vh;
+        position: relative;
+    }
+
+    #forumhelp {
+        position: relative;
+        width: 80%;
+        top: -1vw;
+        margin-left: 0.6vw;
+    }
+
+    .grid-container {
+        position: relative;
+        display: block;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+        padding: 0px;
+        grid-auto-columns: 30%;
+    }
+
+    .grid-item2 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        width: 80%;
+    }
+
+    .grid-item4 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        width: 80%;
+    }
+
+    .grid-item3 {
+        display: block;
+    }
+
+    .userinfo {
+        position: absolute;
+        font-size: 0.5em;
+        top: 70%;
+        transform: translate(0, 0);
+        left: 90%;
+        width: 25%;
+        display: inline-block;
+        margin: 0;
+
+        span {
+            position: relative;
+            margin-top: 1px;
+            display: block;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .forumform {
+        display: inline-block;
+        width: 100%;
+        margin-top: 6%;
+        padding-left: 10%;
+        margin-left: 0%;
+
+        textarea {
+            width: 99%;
+            height: 13vh;
+            background-color: $White;
+            font-family: "Blatant", sans-serif;
+        }
+
+        input[type="submit"] {
+            font-family: "Blatant", sans-serif;
+            color: $White;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            position: relative;
+            display: block;
+            left: 100%;
+            transform: translate(-100%);
+        }
+
+        #forumposts {
+            display: inline-block;
+            width: 100%;
+            height: 13vh;
+            background-color: $White;
+            font-family: "Blatant", sans-serif;
+            color: black;
+        }
+    }
+}
